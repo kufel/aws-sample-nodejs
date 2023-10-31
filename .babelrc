@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "useBuiltIns": "usage",
+                "corejs": "3.6",
+                "targets": {
+                    "node": "current"
+                },
+                "exclude": [
+                    "@babel/plugin-transform-regenerator"
+                ]
+            }
+        ]
+    ],
+    "plugins": [
+        "@babel/plugin-proposal-object-rest-spread"
+    ],
+    "ignore": [
+        "node_modules/*"
+    ]
+}
