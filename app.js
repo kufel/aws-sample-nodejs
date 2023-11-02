@@ -2,6 +2,7 @@ import express from "express";
 import createError from "http-errors";
 import logger from "morgan";
 import timeout from "connect-timeout";
+import { performance } from "perf_hooks";
 
 const port = 4232;
 const app = express();
@@ -63,7 +64,7 @@ function cpuIntensiveFun(baseNum) {
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
-  next(createError(httpCodes.notFound));
+  next(createError(404));
 });
 
 function haltOnTimedout(req, res, next) {
