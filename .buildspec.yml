@@ -1,8 +1,9 @@
 version: 0.2
 env:
-    secrets-manager:
-        DOCKERHUB_USERNAME: 'DockerHubCreds:DOCKERHUB_USERNAME'
-        DOCKERHUB_PASSWORD: 'DockerHubCreds:DOCKERHUB_PASSWORD'
+    git-credential-helper: yes
+    # secrets-manager:
+    #     DOCKERHUB_USERNAME: 'DockerHubCreds:DOCKERHUB_USERNAME'
+    #     DOCKERHUB_PASSWORD: 'DockerHubCreds:DOCKERHUB_PASSWORD'
 phases:
     install:
         runtime-versions:
@@ -36,5 +37,5 @@ phases:
 artifacts:
     files:
         - imagedefinitions.json
-        - appspec.yml
+        # - appspec.yml
         # - ./bin/*
