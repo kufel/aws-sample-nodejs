@@ -10,23 +10,20 @@ phases:
             nodejs: 16
     pre_build:
         commands:
-            - REPOSITORY_URI=146229926373.dkr.ecr.us-east-1.amazonaws.com/migration-test-nodeapp
+            - REPOSITORY_URI=589485118270.dkr.ecr.us-east-1.amazonaws.com/stylus-sample-nodejs
             - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
             - IMAGE_TAG=${COMMIT_HASH:=latest}
             # - echo Installing dependencies...
             # - npm install
             - echo Logging in to ECR...
-            - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin  146229926373.dkr.ecr.us-east-1.amazonaws.com
+            - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin  1589485118270.dkr.ecr.us-east-1.amazonaws.com
             # - echo "${DOCKERHUB_PASSWORD}" | docker login --username $DOCKERHUB_USERNAME --password-stdin 146229926373.dkr.ecr.us-east-1.amazonaws.com
     build:
         commands:
             # - npm run build
             # - echo Build completed on `date`
             - echo Building docker image...
-            - >
-                docker build -t migration-test-nodeapp:latest -f Dockerfile
-                # --build-arg APP_HOST=$APP_HOST
-                .
+            - docker build -t migration-test-nodeapp:latest -f Dockerfile .
             - docker tag migration-test-nodeapp:latest $REPOSITORY_URI:$IMAGE_TAG
     post_build:
         commands:
