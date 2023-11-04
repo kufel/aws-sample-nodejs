@@ -1,0 +1,13 @@
+{
+  "containerDefinitions": [
+    {
+      "name": "example-ecs",
+      "image": "589485118270.dkr.ecr.us-east-1.amazonaws.com/stylus-sample-nodejs:latest",
+      "memory": 200,
+      "cpu": 10,
+      "essential": true
+    }
+  ],
+  "family": "stylus-example-ecs",
+  "taskRoleArn": "arn:aws:iam::589485118270:role/stylus-example-ecs-20231104011125024200000009"
+}
