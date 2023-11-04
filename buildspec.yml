@@ -31,7 +31,7 @@ phases:
             - echo Pushing image to ECR repo...
             - docker push $REPOSITORY_URI:$IMAGE_TAG
             - echo Generating imagedefinitions.json
-            - printf '{"name":"aws-ecr-node-test","ImageURI":"%s"}' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+            - printf '[{"name":"aws-ecr-node-test","ImageURI":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
 artifacts:
     files:
         - imagedefinitions.json
