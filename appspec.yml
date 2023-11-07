@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:589485118270:task-definition/stylus-aws-sample-nodejs:17"
+        TaskDefinition: "arn:aws:ecs:us-east-1:589485118270:task-definition/stylus-aws-sample:5"
         LoadBalancerInfo:
-          ContainerName: "aws-sample"
-          ContainerPort: 4232
+          ContainerName: "stylus-aws-sample"
+          ContainerPort: 80
