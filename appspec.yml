@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:589485118270:task-definition/sty-aws-sample:1"
+        TaskDefinition: "arn:aws:ecs:us-east-1:589485118270:task-definition/sty-aws-sample:9"
         LoadBalancerInfo:
           ContainerName: "aws-sample"
           ContainerPort: 4232
