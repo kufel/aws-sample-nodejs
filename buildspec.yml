@@ -16,12 +16,9 @@ phases:
              # - echo Installing dependencies...
             - echo IMAGE_TAG = $IMAGE_TAG
             # - npm install
-            - |
-              DOCKERHUB_USERNAME=jjmka
-              DOCKERHUB_PASSWORD=dckr_pat_ItPoIXQPWo3yxaCUIW5UOQopqXg
             - echo Logging in to ECR...
             # - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin  589485118270.dkr.ecr.us-east-1.amazonaws.com
-            - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin 589485118270.dkr.ecr.us-east-1.amazonaws.com
+            - echo "DockerHubCreds:dckr_pat_ItPoIXQPWo3yxaCUIW5UOQopqXg" | docker login --username "DockerHubCreds:jjmka" --password-stdin 589485118270.dkr.ecr.us-east-1.amazonaws.com
     build:
         commands:
             # - npm run build
