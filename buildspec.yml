@@ -16,7 +16,6 @@ phases:
              # - echo Installing dependencies...
             - echo IMAGE_TAG = $IMAGE_TAG
             # - npm install
-            - echo "Retrieving Docker Hub credentials from Secrets Manager..."
             - |
               DOCKERHUB_USERNAME=jjmka
               DOCKERHUB_PASSWORD=dckr_pat_ItPoIXQPWo3yxaCUIW5UOQopqXg
