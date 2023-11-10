@@ -16,9 +16,13 @@ phases:
              # - echo Installing dependencies...
             - echo IMAGE_TAG = $IMAGE_TAG
             # - npm install
+            - echo "Retrieving Docker Hub credentials from Secrets Manager..."
+            - |
+              DOCKERHUB_USERNAME=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:YOUR_REGION:YOUR_ACCOUNT_ID:secret:DOCKERHUB_USERNAME --query SecretString --output text)
+              DOCKERHUB_PASSWORD=$(aws secretsmanager get-secret-value --secret-id arn:aws:secretsmanager:YOUR_REGION:YOUR_ACCOUNT_ID:secret:DOCKERHUB_PASSWORD --query SecretString --output text)
             - echo Logging in to ECR...
             # - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin  589485118270.dkr.ecr.us-east-1.amazonaws.com
-            - echo "dckr_pat_ItPoIXQPWo3yxaCUIW5UOQopqXg" | docker login --username jjmka --password-stdin 589485118270.dkr.ecr.us-east-1.amazonaws.com
+            - echo "$DOCKERHUB_PASSWORD" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin 589485118270.dkr.ecr.us-east-1.amazonaws.com
     build:
         commands:
             # - npm run build
