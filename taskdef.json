@@ -9,5 +9,5 @@
     }
   ],
   "family": "aws-sample",
-  "taskRoleArn": "arn:aws:ecs:us-east-1:589485118270:task-definition/aws-sample:2"
+  "taskRoleArn": "arn:aws:iam::589485118270:role/aws-sample-20231113182044687300000008"
 }
