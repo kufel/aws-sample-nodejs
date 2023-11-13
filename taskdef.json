@@ -46,7 +46,6 @@
             "host": {}
         }
     ],
-    "status": "ACTIVE",
     "requiresAttributes": [
         {
             "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
@@ -92,8 +91,6 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-11-13T18:20:47.585Z",
-    "registeredBy": "arn:aws:iam::589485118270:user/GitLab",
     "tags": [
         {
             "key": "Environment",
