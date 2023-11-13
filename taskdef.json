@@ -1,5 +1,4 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:589485118270:task-definition/aws-sample:2",
     "containerDefinitions": [
         {
             "name": "aws-sample",
@@ -41,10 +40,6 @@
         }
     ],
     "family": "aws-sample",
-    "taskRoleArn": "arn:aws:iam::589485118270:role/aws-sample-20231113182044687300000008",
-    "executionRoleArn": "arn:aws:iam::589485118270:role/aws-sample-20231113182044405700000003",
-    "networkMode": "awsvpc",
-    "revision": 2,
     "volumes": [
         {
             "name": "my-vol",
