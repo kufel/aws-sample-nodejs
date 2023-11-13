@@ -1,108 +1,13 @@
 {
-    "containerDefinitions": [
-        {
-            "name": "aws-sample",
-            "image": "589485118270.dkr.ecr.us-east-1.amazonaws.com/sample-nodejs:base123",
-            "cpu": 256,
-            "memory": 256,
-            "portMappings": [
-                {
-                    "name": "aws-sample",
-                    "containerPort": 4232,
-                    "hostPort": 4232,
-                    "protocol": "tcp"
-                }
-            ],
-            "essential": true,
-            "environment": [],
-            "mountPoints": [
-                {
-                    "sourceVolume": "my-vol",
-                    "containerPath": "/var/www/my-vol"
-                }
-            ],
-            "volumesFrom": [],
-            "startTimeout": 30,
-            "stopTimeout": 120,
-            "user": "0",
-            "privileged": false,
-            "readonlyRootFilesystem": false,
-            "interactive": false,
-            "pseudoTerminal": false,
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-group": "/aws/ecs/aws-sample/aws-sample",
-                    "awslogs-region": "us-east-1",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            }
-        }
-    ],
-    "family": "aws-sample",
-    "volumes": [
-        {
-            "name": "my-vol",
-            "host": {}
-        }
-    ],
-    "requiresAttributes": [
-        {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.17"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.task-iam-role"
-        },
-        {
-            "name": "ecs.capability.container-ordering"
-        },
-        {
-            "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        }
-    ],
-    "placementConstraints": [],
-    "compatibilities": [
-        "EC2"
-    ],
-    "requiresCompatibilities": [
-        "EC2"
-    ],
-    "cpu": "256",
-    "memory": "256",
-    "runtimePlatform": {
-        "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "LINUX"
-    },
-    "tags": [
-        {
-            "key": "Environment",
-            "value": "Production"
-        },
-        {
-            "key": "Repository",
-            "value": "589485118270.dkr.ecr.us-east-1.amazonaws.com/sample-nodejs:base123"
-        },
-        {
-            "key": "Name",
-            "value": "sty-aws-sample"
-        }
-    ]
+  "containerDefinitions": [
+    {
+      "name": "aws-sample",
+      "image": "589485118270.dkr.ecr.us-east-1.amazonaws.com/sample-nodejs:base123",
+      "memory": 200,
+      "cpu": 10,
+      "essential": true
+    }
+  ],
+  "family": "aws-sample",
+  "taskRoleArn": "arn:aws:ecs:us-east-1:589485118270:task-definition/aws-sample:2"
 }
